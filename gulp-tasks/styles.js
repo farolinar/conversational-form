@@ -1,12 +1,12 @@
-var flatten = require('gulp-flatten');
-var changed = require('gulp-changed');
-// var gutil = require('gulp-util');
-var log = require('fancy-log');
-var livereload = require('gulp-livereload');
-// var notify = require("gulp-notify");
-var concat = require('gulp-concat');
-var cleanCSS = require('gulp-clean-css');
-var rename = require('gulp-rename');
+const flatten = require('gulp-flatten');
+const changed = require('gulp-changed');
+// const gutil = require('gulp-util');
+const log = require('fancy-log');
+const livereload = require('gulp-livereload');
+// const notify = require("gulp-notify");
+const concat = require('gulp-concat');
+const cleanCSS = require('gulp-clean-css');
+const rename = require('gulp-rename');
 
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
@@ -22,35 +22,15 @@ function swallowError(error) {
  */
 
 /**
- * form style tasks
- */
-
-global.gulp.task('sass-form-build', ['sass-form'], function(){
-	var src = [
-		global.buildFolder + "conversational-form*.css"
-	]
-
-	var stream = global.gulp.src(src)
-		// .pipe(concat('conversational-form.css'))
-		.pipe(global.gulp.dest(global.distFolder))
-		.pipe(cleanCSS())
-		.pipe(rename({suffix: '.min'}))
-		.pipe(global.gulp.dest(global.distFolder));
-
-	return stream;
-});
-
-
-/**
  * SCSS
  */
 global.gulp.task('sass-form', function () {
-	var src = [
+	const src = [
 		global.srcFolder + "/styles/conversational-form*.scss"
 	]
-	var dst = global.buildFolder;
+	const dst = global.buildFolder;
 
-	var stream = global.gulp.src(src)
+	const stream = global.gulp.src(src)
 		.pipe(sass().on('error', sass.logError))
 		.pipe(autoprefixer({ browsers: ['> 1%']}))
 		.pipe(global.gulp.dest(dst))
@@ -60,9 +40,21 @@ global.gulp.task('sass-form', function () {
 	return stream;
 });
 
+/**
+ * form style tasks
+ */
 
+global.gulp.task('sass-form-build', gulp.series('sass-form', function(){
+        const src = [
+                global.buildFolder + "conversational-form*.css"
+        ]
 
+        const stream = global.gulp.src(src)
+                // .pipe(concat('conversational-form.css'))
+                .pipe(global.gulp.dest(global.distFolder))
+                .pipe(cleanCSS())
+                .pipe(rename({suffix: '.min'}))
+                .pipe(global.gulp.dest(global.distFolder));
 
-
-
-
+        return stream;
+}));
