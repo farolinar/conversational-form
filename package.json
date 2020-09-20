@@ -1,30 +1,18 @@
 {
-  "name": "conversational-form",
+  "name": "@ehealth-co-id/conversational-form",
   "description": "Turning web forms into conversations",
   "main": "dist/conversational-form.js",
   "directories": {
-    "dist": "distribution"
+    "test": "tests"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ehealth-co-id/conversational-form"
+    "url": "git+https://github.com/ehealth-co-id/conversational-form.git"
   },
-  "author": {
-    "name": "Felix Nielsen",
-    "email": "felix.nielsen@rwatgg.dk",
-    "url": "http://rwatgg.dk"
-  },
+  "author": "Felix Nielsen <felix.nielsen@rwatgg.dk> (http://rwatgg.dk)",
   "contributors": [
-    {
-      "name": "Jens Soegaard",
-      "email": "jens@jenssogaard.com",
-      "url": "https://jenssogaard.com"
-    },
-    {
-      "name": "Ibrohim Kholilul Islam",
-      "email": "ibrohim@ehealth.co.id",
-      "url": "https://ehealth.co.id"
-    }
+    "Jens Soegaard <jens@jenssogaard.com> (https://jenssogaard.com)",
+    "Ibrohim Kholilul Islam <ibrohim@ehealth.co.id> (https://ehealth.co.id)"
   ],
   "license": "MIT",
   "bugs": {
@@ -65,5 +53,6 @@
     "prismjs": "^1.9.0",
     "stream": "*",
     "typescript": "*"
-  }
+  },
+  "version": "1.0.0"
 }
