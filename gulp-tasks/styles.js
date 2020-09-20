@@ -8,7 +8,7 @@ const concat = require('gulp-concat');
 const cleanCSS = require('gulp-clean-css');
 const rename = require('gulp-rename');
 
-const sass = require('gulp-sass');
+const sass = require('gulp-dart-sass');
 const autoprefixer = require('gulp-autoprefixer');
 
 function swallowError(error) {
