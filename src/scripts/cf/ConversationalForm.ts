@@ -87,6 +87,8 @@ namespace cf {
 		preventSubmitOnEnter?:boolean;
 
 		animationsEnabled?:boolean;
+
+		preventEditAnswer?:boolean;
 	}
 
 	// CUI formless options
@@ -538,7 +540,7 @@ namespace cf {
 
 			innerWrap.appendChild(this.userInput.el);
 
-			this.onUserAnswerClickedCallback = this.onUserAnswerClicked.bind(this);
+			if(!this.options.preventEditAnswer) this.onUserAnswerClickedCallback = this.onUserAnswerClicked.bind(this);
 			this.eventTarget.addEventListener(ChatResponseEvents.USER_ANSWER_CLICKED, this.onUserAnswerClickedCallback, false);
 
 			this.el.classList.add("conversational-form--show")

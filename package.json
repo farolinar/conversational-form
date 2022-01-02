@@ -1,5 +1,5 @@
 {
-  "name": "@ehealth-co-id/conversational-form",
+  "name": "@00farol/conversational-form",
   "description": "Turning web forms into conversations",
   "main": "dist/conversational-form.js",
   "directories": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ehealth-co-id/conversational-form.git"
+    "url": "git+https://github.com/farolinar/conversational-form.git"
   },
   "author": "Felix Nielsen <felix.nielsen@rwatgg.dk> (http://rwatgg.dk)",
   "contributors": [
@@ -16,9 +16,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ehealth-co-id/conversational-form/issues"
+    "url": "https://github.com/farolinar/conversational-form/issues"
   },
-  "homepage": "https://github.com/ehealth-co-id/conversational-form",
+  "homepage": "https://github.com/farolinar/conversational-form",
   "ignore": [
     "build"
   ],
