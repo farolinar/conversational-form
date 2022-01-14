@@ -98,7 +98,7 @@ namespace cf {
 	}
 
 	export class ConversationalForm{
-		public version: string = "1.0.3";
+		public version: string = "1.0.4";
 
 		public static animationsEnabled: boolean = true;
 		public static illustrateAppFlow: boolean = true;
