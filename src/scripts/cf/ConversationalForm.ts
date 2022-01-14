@@ -106,7 +106,7 @@ namespace cf {
 		public static showProgressBar: boolean = false;
 		public static preventSubmitOnEnter: boolean = false;
 
-		private cdnPath: string = "https://cdn.jsdelivr.net/gh/space10-community/conversational-form@{version}/dist/";
+		private cdnPath: string = "https://cdn.jsdelivr.net/npm/@00farol/conversational-form@{version}/dist/";
 		/**
 		 * createId
 		 * Id of the instance, to isolate events

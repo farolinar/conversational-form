@@ -27,11 +27,11 @@
 (function (root, factory) {
 	// from http://ifandelse.com/its-not-hard-making-your-library-support-amd-and-commonjs/#update
 	if(typeof define === "function" && define.amd) {
-		define(["@ehealth-co-id/conversational-form"], function(conversationalform){
+		define(["@00farol/conversational-form"], function(conversationalform){
 			return (root.conversationalform = factory(conversationalform));
 		});
 	} else if(typeof module === "object" && module.exports) {
-		module.exports = (root.conversationalform = factory(require("@ehealth-co-id/conversational-form")));
+		module.exports = (root.conversationalform = factory(require("@00farol/conversational-form")));
 	} else {
 		root.conversationalform = factory(cf.ConversationalForm);
 	}

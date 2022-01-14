@@ -36,6 +36,7 @@ namespace cf {
 		private currentControlElement: IControlElement;
 
 		private animateInFromResponseTimer: any;
+		private animateInFromRemoveTimer: any;
 		private ignoreKeyboardInput: boolean = false;
 		private rowIndex: number = -1;
 		private columnIndex: number = 0;
@@ -182,9 +183,10 @@ namespace cf {
 
 			// only show when user response
 			if(!(<any> event.detail).currentResponse.isRobotResponse){
+				clearTimeout(this.animateInFromRemoveTimer);
 				this.animateInFromResponseTimer = setTimeout(() => {
 					this.animateElementsIn();
-				}, this.cfReference.uiOptions.controlElementsInAnimationDelay);
+				}, Number(this.cfReference.uiOptions.controlElementsInAnimationDelay));
 			}
 		}
 
@@ -291,8 +293,10 @@ namespace cf {
 		}
 
 		private onUserInputUpdate(event: CustomEvent){
-			this.el.classList.remove("animate-in");
-			this.infoElement.classList.remove("show");
+			this.animateInFromRemoveTimer = setTimeout(() => {
+				this.el.classList.add("animate-out");
+				this.infoElement.classList.remove("show");
+			}, Number(this.cfReference.uiOptions.controlElementsInAnimationDelay)*4.0);
 
 			if(this.elements){
 				const elements: Array<IControlElement> = this.getElements();
